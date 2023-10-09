@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+}
+
+div#root div {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+div#name {
+    min-height: 12vh;
+}
+
+div#work {
+    min-height: 22vh;
+}
+
+div#education {
+    min-height: 22vh;
+}

@@ -3,9 +3,9 @@ import { useState } from "react";
 function Education() {
     
     return (
-        <>
-        <h2>University of Details Goes Here</h2>
-        </>
+        <div id="education">
+        <h2>Education</h2>
+        </div>
     )
 }
 

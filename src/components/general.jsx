@@ -1,13 +1,20 @@
 import { useState } from "react";
 
 function Greetings() {
-    return (
-        <>
-        <h1>Welcome to CV Maker.</h1>
-        <h2>Double click on any titles/paragaraphs you want to change. Click Hide btn when satisfied.</h2>
-        <h3>If you want to save, hide this dialog section, press ctrl+p and save as pdf.</h3>
-        </>
-    )
+  const [show, setShow] = useState(false);
+  function handleSetShow() {
+    setShow(true);
+  }
+  return (
+    <aside hidden={show}>
+      <p>
+        Welcome to CV Maker. Double click on any titles/paragaraphs you want to
+        change. Click Hide btn when satisfied. If you want to save, hide this
+        dialog section, press ctrl+p and save as pdf.
+      </p>
+      <button onClick={handleSetShow}>Hide panel</button>
+    </aside>
+  );
 }
 
 function Title() {
@@ -34,7 +41,7 @@ function Title() {
   }
 
   return (
-    <>
+    <div id="name">
       <input
         type="text"
         id="fullName"
@@ -48,7 +55,7 @@ function Title() {
       <h1 onDoubleClick={showInputs}>{name}</h1>
       <input
         type="text"
-        id="fullName"
+        id="contact"
         value={contact}
         onChange={handleContactChange}
         hidden={hidden}
@@ -57,7 +64,22 @@ function Title() {
         Hide
       </button>
       <p onDoubleClick={showInputs}>{contact}</p>
-    </>
+      <input
+        type="text"
+        id="contact"
+        value={contact}
+        onChange={handleContactChange}
+        hidden={hidden}
+      />
+      <button onClick={hideInputs} hidden={hidden}>
+        Hide
+      </button>
+      <p onDoubleClick={showInputs}>
+        I am a software engineer with x years of experiences, I've worked on
+        several projects and I've used several tools and tech stacks to finish
+        projects for xs companies.
+      </p>
+    </div>
   );
 }
 
