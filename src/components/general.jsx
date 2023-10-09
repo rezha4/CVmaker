@@ -6,26 +6,31 @@ function Greetings() {
     setShow(true);
   }
   return (
-    <aside hidden={show}>
-      <p>
-        Welcome to CV Maker. Double click on any titles/paragaraphs you want to
-        change. Click Hide btn when satisfied. If you want to save, hide this
-        dialog section, press ctrl+p and save as pdf.
-      </p>
-      <button onClick={handleSetShow}>Hide panel</button>
+    <aside>
+      <div hidden={show}>
+        <p>
+          Welcome to CV Maker. Double click on any titles/paragaraphs you want
+          to change. Click Hide btn when satisfied. If you want to save, hide
+          this dialog section, press ctrl+p and save as pdf.
+        </p>
+        <button onClick={handleSetShow}>Hide panel</button>
+      </div>
     </aside>
   );
 }
 
 function Title() {
-  const [name, setName] = useState("FirstName LastName");
+  const [description, setDescription] = useState({
+    name: "FirstName LastName",
+    contact:
+      "Number (+62) 888 33 230 920, email@email.com, Address and PO BOX No. 234098 - @socialM @MediaHandle @GoesHere",
+    introduction:
+      "I am a software engineer with x years of experiences, I've worked on several projects and I've used several tools and tech stacks to finish projects for xs companies.",
+  });
   const [hidden, setHidden] = useState(true);
-  const [contact, setContact] = useState(
-    "Number (+62) 888 33 230 920, email@email.com, Address and PO BOX No. 234098 - @socialM @MediaHandle @GoesHere"
-  );
 
   function handleNameChange(e) {
-    setName(e.target.value);
+    setDescription({ ...description, name: e.target.value });
   }
 
   function hideInputs() {
@@ -37,7 +42,11 @@ function Title() {
   }
 
   function handleContactChange(e) {
-    setContact(e.target.value);
+    setDescription({ ...description, contact: e.target.value });
+  }
+
+  function handleIntroChange(e) {
+    setDescription({ ...description, introduction: e.target.value });
   }
 
   return (
@@ -45,40 +54,36 @@ function Title() {
       <input
         type="text"
         id="fullName"
-        value={name}
+        value={description.name}
         onChange={handleNameChange}
         hidden={hidden}
       />
       <button onClick={hideInputs} hidden={hidden}>
         Hide
       </button>
-      <h1 onDoubleClick={showInputs}>{name}</h1>
+      <h1 onDoubleClick={showInputs}>{description.name}</h1>
       <input
         type="text"
         id="contact"
-        value={contact}
+        value={description.contact}
         onChange={handleContactChange}
         hidden={hidden}
       />
       <button onClick={hideInputs} hidden={hidden}>
         Hide
       </button>
-      <p onDoubleClick={showInputs}>{contact}</p>
+      <p onDoubleClick={showInputs}>{description.contact}</p>
       <input
         type="text"
         id="contact"
-        value={contact}
-        onChange={handleContactChange}
+        value={description.introduction}
+        onChange={handleIntroChange}
         hidden={hidden}
       />
       <button onClick={hideInputs} hidden={hidden}>
         Hide
       </button>
-      <p onDoubleClick={showInputs}>
-        I am a software engineer with x years of experiences, I've worked on
-        several projects and I've used several tools and tech stacks to finish
-        projects for xs companies.
-      </p>
+      <p onDoubleClick={showInputs}>{description.introduction}</p>
     </div>
   );
 }

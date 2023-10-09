@@ -13,6 +13,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <div>
       <Title />
       <Education />
+      <button onClick={Education}>Add Edu</button>
       <Work />
     </div>
   </React.StrictMode>
