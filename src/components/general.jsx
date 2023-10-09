@@ -1,8 +1,18 @@
 import { useState } from "react";
 
+function Greetings() {
+    return (
+        <>
+        <h1>Welcome to CV Maker.</h1>
+        <h2>Double click on any titles/paragaraphs you want to change. Click Hide btn when satisfied.</h2>
+        <h3>If you want to save, hide this dialog section, press ctrl+p and save as pdf.</h3>
+        </>
+    )
+}
+
 function Title() {
   const [name, setName] = useState("FirstName LastName");
-  const [hidden, setHidden] = useState(false);
+  const [hidden, setHidden] = useState(true);
   const [contact, setContact] = useState(
     "Number (+62) 888 33 230 920, email@email.com, Address and PO BOX No. 234098 - @socialM @MediaHandle @GoesHere"
   );
@@ -46,9 +56,9 @@ function Title() {
       <button onClick={hideInputs} hidden={hidden}>
         Hide
       </button>
-      <p>{contact}</p>
+      <p onDoubleClick={showInputs}>{contact}</p>
     </>
   );
 }
 
-export { Title };
+export { Title, Greetings };
