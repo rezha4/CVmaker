@@ -22,8 +22,10 @@ function MainApp() {
         <Greetings />
         <div>
           <Title />
+          <hr></hr>
           <h2 onDoubleClick={addEducation}>Education</h2>
           {educationComponents}
+          <hr></hr>
           <h2>Work Experiences</h2>
           <Work />
         </div>

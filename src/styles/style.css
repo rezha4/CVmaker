@@ -12,6 +12,13 @@ div#name {
   margin: auto;
 }
 
+hr {
+    border: 1.5px solid;
+    max-width: 60vw;
+    position: relative;
+    margin: 2rem auto;
+}
+
 div#education {
   max-width: 60vw;
   margin: auto;
