@@ -31,7 +31,6 @@ function Education() {
 
   return (
     <div id="education">
-      <h2>Education</h2>
       <input
         type="text"
         id="fullName"
@@ -69,4 +68,15 @@ function Education() {
   );
 }
 
-export { Education };
+function NewEducation() {
+  function addEdu() {
+    return Education();
+  }
+  return (
+    <>
+    <button onClick={addEdu}>Add Edu</button>
+    </>
+  )
+}
+
+export { Education, NewEducation };

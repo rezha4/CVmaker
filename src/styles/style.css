@@ -3,18 +3,38 @@
 }
 
 div#root div {
-    margin-top: 1rem;
-    text-align: center;
+  margin-top: 1rem;
+  text-align: center;
 }
 
 div#name {
-    min-height: 12vh;
-}
-
-div#work {
-    min-height: 22vh;
+  max-width: 60vw;
+  margin: auto;
 }
 
 div#education {
-    min-height: 22vh;
+  max-width: 60vw;
+  margin: auto;
+}
+
+div#work {
+  max-width: 60vw;
+  margin: auto;
+}
+
+div#work h1 {
+  font-size: 1.5em;
+}
+
+div#work h2 {
+  text-align: left;
+}
+
+div#work ul li {
+  text-align: left;
+}
+
+div#work div {
+  display: flex;
+  justify-content: space-between;
 }
